@@ -67,5 +67,23 @@ class TestCalculoNumeros(unittest.TestCase):
         with self.assertRaises(ValueError):
             ingrese_numero()
 
+    @patch(  # este patch controla lo que hace el input
+        'builtins.input',
+        return_value='BBB'
+    )
+    def test_ingreso_letras(self, patch_input):
+        with self.assertRaises(ValueError):
+            ingrese_numero()
+
+    @patch(  # este patch controla lo que hace el input
+        'builtins.input',
+        return_value='CCC'
+    )
+    def test_ingreso_letras(self, patch_input):
+        with self.assertRaises(ValueError):
+            ingrese_numero()
+             
+             #fin de los test de textos no numericos------------------------------------------
+
 if __name__ == '__main__':
     unittest.main() 
