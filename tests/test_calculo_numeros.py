@@ -31,7 +31,7 @@ class TestCalculoNumeros(unittest.TestCase):
         numero = ingrese_numero()
         self.assertEqual(numero, 300)
 
-             #fin de los test de numeros validos
+             #fin de los test de numeros validos------------------------------------------
 
     @patch(  # este patch controla lo que hace el input
         'builtins.input',
@@ -40,6 +40,24 @@ class TestCalculoNumeros(unittest.TestCase):
     def test_ingreso_negativo(self, patch_input):
         with self.assertRaises(NumeroDebeSerPositivo):
             ingrese_numero()
+
+    @patch(  # este patch controla lo que hace el input
+        'builtins.input',
+        return_value='-200'
+    )
+    def test_ingreso_negativo(self, patch_input):
+        with self.assertRaises(NumeroDebeSerPositivo):
+            ingrese_numero()
+
+    @patch(  # este patch controla lo que hace el input
+        'builtins.input',
+        return_value='-300'
+    )
+    def test_ingreso_negativo(self, patch_input):
+        with self.assertRaises(NumeroDebeSerPositivo):
+            ingrese_numero()
+
+             #fin de los test de numeros negativos------------------------------------------
 
     @patch(  # este patch controla lo que hace el input
         'builtins.input',
