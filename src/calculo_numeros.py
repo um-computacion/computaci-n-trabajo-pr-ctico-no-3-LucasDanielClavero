@@ -1,9 +1,7 @@
 from exceptions import ingrese_numero
-
+from exceptions import NumeroDebeSerPositivo
 def main():
-    """
-    Programa principal que solicita números al usuario y muestra los resultados.
-    """
+
     while True:
         try:
             numero = ingrese_numero()
@@ -15,6 +13,5 @@ def main():
         except KeyboardInterrupt:
             print("\nPrograma finalizado.")
             break
-
 if __name__ == "__main__":
     main() 
