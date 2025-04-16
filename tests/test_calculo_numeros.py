@@ -19,7 +19,7 @@ class TestCalculoNumeros(unittest.TestCase):
         'builtins.input',
         return_value='200'
     )
-    def test_ingreso_feliz(self, patch_input):
+    def test_ingreso_feliz2(self, patch_input):
         numero = ingrese_numero()
         self.assertEqual(numero, 200)
 
@@ -27,7 +27,7 @@ class TestCalculoNumeros(unittest.TestCase):
         'builtins.input',
         return_value='300'
     )
-    def test_ingreso_feliz(self, patch_input):
+    def test_ingreso_feliz3(self, patch_input):
         numero = ingrese_numero()
         self.assertEqual(numero, 300)
 
@@ -45,7 +45,7 @@ class TestCalculoNumeros(unittest.TestCase):
         'builtins.input',
         return_value='-200'
     )
-    def test_ingreso_negativo(self, patch_input):
+    def test_ingreso_negativo2(self, patch_input):
         with self.assertRaises(NumeroDebeSerPositivo):
             ingrese_numero()
 
@@ -53,7 +53,7 @@ class TestCalculoNumeros(unittest.TestCase):
         'builtins.input',
         return_value='-300'
     )
-    def test_ingreso_negativo(self, patch_input):
+    def test_ingreso_negativo3(self, patch_input):
         with self.assertRaises(NumeroDebeSerPositivo):
             ingrese_numero()
 
@@ -71,7 +71,7 @@ class TestCalculoNumeros(unittest.TestCase):
         'builtins.input',
         return_value='BBB'
     )
-    def test_ingreso_letras(self, patch_input):
+    def test_ingreso_letras2(self, patch_input):
         with self.assertRaises(ValueError):
             ingrese_numero()
 
@@ -79,7 +79,7 @@ class TestCalculoNumeros(unittest.TestCase):
         'builtins.input',
         return_value='CCC'
     )
-    def test_ingreso_letras(self, patch_input):
+    def test_ingreso_letras3(self, patch_input):
         with self.assertRaises(ValueError):
             ingrese_numero()
              
